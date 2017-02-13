@@ -1,8 +1,10 @@
 dist: trusty
-sudo: required
+sudo: false
+language: cpp
+node_js: 6
 
 install:
   - true
 
 script:
-  - wget --version
+  - node --version
