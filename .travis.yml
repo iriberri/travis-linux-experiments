@@ -5,4 +5,4 @@ install:
   - true
 
 script:
-  - wget -v
+  - wget --version
