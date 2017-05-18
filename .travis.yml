@@ -1,13 +1,12 @@
 dist: trusty
 sudo: required
-language: cpp
+language: generic
 
 before_install:
-  - nvm install
-  - nvm use
+  - sudo apt-get update
+  - sudo apt-get install gfortran
 
-install:
-  - true
+install: skip
 
 script:
-  - node --version
+  - gfortran --version
