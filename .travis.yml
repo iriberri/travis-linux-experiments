@@ -1,12 +1,20 @@
 dist: trusty
 sudo: required
-language: generic
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install gfortran
+cache: bundler
 
-install: skip
+language: ruby
+
+rvm: 2.3.4
+
+matrix:
+  include:
+  - group: stable
+    env: GROUP=stable
+  - group: edge
+    env: GROUP=edge
+
+install: true
 
 script:
-  - gfortran --version
+- true
