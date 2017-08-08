@@ -1,20 +1,18 @@
-dist: trusty
-sudo: required
-
-cache: bundler
-
 language: ruby
+dist: trusty
 
-rvm: 2.3.3
 
-matrix:
-  include:
-  - group: stable
-    env: GROUP=stable
-  - group: edge
-    env: GROUP=edge
+install:
+- true
 
-install: true
 
 script:
 - true
+
+deploy:
+  provider: releases
+  api-key: "nope"
+  file_glob: true
+  skip_cleanup: true
+  on:
+    tags: true
