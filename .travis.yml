@@ -1,17 +1,24 @@
 language: ruby
 dist: trusty
 
+install: true
 
-install:
-- true
+jobs:
+  include:
+    - stage: test
+      script: echo "test"
+    - stage: deploy_test
+      script: echo "deploy"
+    - stage: nightly
+      script: echo "nightly"
 
-
+stages:
+  - name: test
+    if: type = pull_request
+  - name: deploy_test
+    if: branch = master AND type = api AND env(TRAVIS_API_TYPE) IS blank
+  - name: nightly
+    if: type = api AND env(TRAVIS_API_TYPE) = nightly
+    
 script:
 - true
-
-deploy:
-  provider: releases
-  api-key: "nope"
-  file_glob: true
-  skip_cleanup: true
-
