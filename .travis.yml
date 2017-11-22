@@ -20,5 +20,3 @@ stages:
   - name: nightly
     if: type = api AND env(TRAVIS_API_TYPE) = nightly
     
-script:
-- true
