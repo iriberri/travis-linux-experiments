@@ -8,4 +8,3 @@ install:
 - curl https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl
 - curl http://api.search.live.net/search.wsdl
 script: true
-
