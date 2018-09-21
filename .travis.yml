@@ -1,10 +1,17 @@
-language: php
+install: true
 
-php: 5.4
+script: >-
+  echo hi
+  echo ho
+  echo ha
 
-sudo: false
+deploy:
+  provider: script
+  script: >-
+    echo 1
+    echo 2
+    echo 3
+  on:
+    all_branches: true
 
-install:
-- curl https://www.paypalobjects.com/wsdl/PayPalSvc.wsdl
-- curl http://api.search.live.net/search.wsdl
-script: true
+
