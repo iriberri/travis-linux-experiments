@@ -13,5 +13,3 @@ deploy:
     echo 3
   on:
     all_branches: true
-
-
