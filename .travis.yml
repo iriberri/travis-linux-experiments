@@ -1,15 +1,17 @@
+
 install: true
+sudo: true
+script: 
+- apt-key list
+- curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+- apt-key list
+- apt-get update
 
-script: >-
-  echo hi
-  echo ho
-  echo ha
+language: ruby
 
-deploy:
-  provider: script
-  script: >-
-    echo 1
-    echo 2
-    echo 3
-  on:
-    all_branches: true
+
+notifications:
+  email:
+    on_success: never # default: change
+    on_failure: never # default: always
+    on_change: never
